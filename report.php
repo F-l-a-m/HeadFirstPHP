@@ -8,7 +8,11 @@
         <h2>Aliens Abducted Me - Report an Abduction</h2>
 
         <?php
-        $name = $_POST['firstname'] . ' ' . $_POST['lastname'];
+        require 'database.php';
+        $connection = Database::connect();
+
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
         $when_it_happened = $_POST['whenithappened'];
         $how_long = $_POST['howlong'];
         $how_many = $_POST['howmany'];
@@ -18,15 +22,42 @@
         $email = $_POST['email'];
         $other = $_POST['other'];
 
-        $to = 'andrew.flam@gmail.com';
-        $subject = 'Aliens Abducted Me - Abduction Report';
-        $msg = "$name was abducted $when_it_happened and was gone for $how_long.\n" .
-                "Number of aliens: $how_many\n" .
-                "Alien description: $alien_description\n" .
-                "What they did: $what_they_did\n" .
-                "Fang spotted: $fang_spotted\n" .
-                "Other comments: $other";
-        mail($to, $subject, $msg, 'From:' . $email);
+        $sql = "INSERT INTO aliens_abduction ( "
+                . "first_name, "
+                . "last_name, "
+                . "when_it_happened, "
+                . "how_long, "
+                . "how_many, "
+                . "alien_description, "
+                . "what_they_did, "
+                . "fang_spotted, "
+                . "other, "
+                . "email) "
+                . "VALUES ("
+                . ":firstname, "
+                . ":lastname, "
+                . ":when_it_happened, "
+                . ":how_long, "
+                . ":how_many, "
+                . ":alien_description, "
+                . ":what_they_did, "
+                . ":fang_spotted, "
+                . ":other, "
+                . ":email)";
+        $query = $connection->prepare($sql);
+        $query->execute(array(
+            "firstname" => $firstname,
+            "lastname" => $lastname,
+            "when_it_happened" => $when_it_happened,
+            "how_long" => $how_long,
+            "how_many" => $how_many,
+            "alien_description" => $alien_description,
+            "what_they_did" => $what_they_did,
+            "fang_spotted" => $fang_spotted,
+            "other" => $other,
+            "email" => $email
+        ));
+        Database::disconnect();
 
         echo 'Thanks for submitting the form.<br />';
         echo 'You were abducted ' . $when_it_happened;
