@@ -8,7 +8,7 @@
         <h2>Aliens Abducted Me - Report an Abduction</h2>
 
         <?php
-        require 'database.php';
+        require '../Database/database.php';
         $connection = Database::connect();
 
         $firstname = $_POST['firstname'];
