@@ -1,38 +1,68 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
         <title>Aliens Abducted Me - Report an Abduction</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+        <script src="../js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h1>Aliens Abducted Me - Report an Abduction</h1>
-        <p>Share your story of alien abduction:</p>
-        <form method="post" action="report.php">
-            <label for="firstname">First name:</label>
-            <input type="text" id="firstname" name="firstname" /><br />
-            <label for="lastname">Last name:</label>
-            <input type="text" id="lastname" name="lastname" /><br />
-            <label for="email">What is your email address?</label>
-            <input type="text" id="email" name="email" /><br />
-            <label for="whenithappened">When did it happen?</label>
-            <input type="text" id="whenithappened" name="whenithappened" /><br />
-            <label for="howlong">How long were you gone?</label>
-            <input type="text" id="howlong" name="howlong" /><br />
-            <label for="howmany">How many did you see?</label>
-            <input type="text" id="howmany" name="howmany" /><br />
-            <label for="aliendescription">Describe them:</label>
-            <input type="text" id="aliendescription" name="aliendescription" size="32" /><br />
-            <label for="whattheydid">What did they do to you?</label>
-            <input type="text" id="whattheydid" name="whattheydid" size="32" /><br />
-            <label for="fangspotted">Have you seen my dog Fang?</label>
-            Yes <input id="fangspotted" name="fangspotted" type="radio" value="yes" />
-            No <input id="fangspotted" name="fangspotted" type="radio" value="no" /><br />
-            <img src="../img/fang.jpg" width="100" height="175"
-                 alt="My abducted dog Fang." /><br />
-            <label for="other">Anything else you want to add?</label>
-            <textarea id="other" name="other"></textarea><br />
-            <button type="button" class="btn btn-primary" onclick="window.location.href='../index.php'">Back</button>
-            <input type="submit" value="Report Abduction" name="submit" />
-        </form>
+        <div class="container" style="margin-top:30px">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Aliens Abducted Me - Report an Abduction</h1>
+                    <p>Share your story of alien abduction:</p>
+                    <form method="post" action="report.php">
+                        <div class="form-group">
+                            <label for="firstname">First name:</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname"/><br />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last name:</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">What is your email address?</label>
+                            <input type="email" class="form-control" id="email" name="email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="whenithappened">When did it happen?</label>
+                            <input type="text" class="form-control" id="whenithappened" name="whenithappened" />
+                        </div>
+                        <div class="form-group">
+                            <label for="howlong">How long were you gone?</label>
+                            <input type="text" class="form-control" id="howlong" name="howlong" />
+                        </div>
+                        <div class="form-group">
+                            <label for="howmany">How many did you see?</label>
+                            <input type="text" class="form-control" id="howmany" name="howmany" />
+                        </div>
+                        <div class="form-group">
+                            <label for="aliendescription">Describe them:</label>
+                            <input type="text" class="form-control" id="aliendescription" name="aliendescription" size="32" />
+                        </div>
+                        <div class="form-group">
+                            <label for="whattheydid">What did they do to you?</label>
+                            <input type="text" class="form-control" id="whattheydid" name="whattheydid" size="32" />
+                        </div>
+                        <div class="form-group">
+                            <label for="fangspotted">Have you seen my dog Fang?</label>
+                            Yes <input id="fangspotted" class="form-control" name="fangspotted" type="radio" value="yes" />
+                            No <input id="fangspotted" class="form-control" name="fangspotted" type="radio" value="no" />
+                        </div>
+                        <img src="../img/fang.jpg" width="100" height="175"
+                             alt="My abducted dog Fang." /><br />
+                        <label for="other">Anything else you want to add?</label>
+                        <textarea id="other" name="other"></textarea><br />
+                        <button type="button" class="btn btn-primary" onclick="window.location.href = '../index.php'">Back</button>
+                        <input type="submit" class="btn btn-primary" value="Report Abduction" name="submit" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="jumbotron text-center" style="margin-bottom:0; margin-top:40px;">
+            <p>&copy; Andrew, 2018</p>
+        </footer>
     </body>
 </html>

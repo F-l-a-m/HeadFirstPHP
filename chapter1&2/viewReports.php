@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Abducted by aliens table</title>
-    </head>
+    <?php
+    require '../template/templater.php';
+    Template::printHead('People abducted by aliens');
+    ?>
     <body>
-        <h1>Abducted by aliens table</h1>
-        <table border="1">
-            <thead>
+        <h1>People abducted by aliens</h1>
+        <table class="table">
+            <thead class="thead-dark">
                 <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>When it happened</th>
-                    <th>How long</th>
-                    <th>How many</th>
-                    <th>Alien description</th>
-                    <th>What they did</th>
-                    <th>Fang spotted</th>
-                    <th>Other</th>
-                    <th>E-mail</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">When it happened</th>
+                    <th scope="col">How long</th>
+                    <th scope="col">How many</th>
+                    <th scope="col">Alien description</th>
+                    <th scope="col">What they did</th>
+                    <th scope="col">Fang spotted</th>
+                    <th scope="col">Other</th>
+                    <th scope="col">E-mail</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 require '../database/database.php';
-                $connection = Database::connect();
+                $connection = Database::connect('aliendatabase');
                 $sql = "SELECT * FROM aliens_abduction";
-                //$query = $connection->prepare($sql);
-                //$query->execute(array());
-                //$data = $query->fetch(PDO::FETCH_ASSOC);
-                
-                
                 foreach ($connection->query($sql) as $row) {
                     echo '<tr>';
                     echo '<td>' . $row['first_name'] . '</td>';
@@ -51,5 +46,6 @@
         </table>
         <br/>
         <button type="button" class="btn btn-primary" onclick="window.location.href='../index.php'">Back</button>
+        <?php Template::printFooter(); ?>
     </body>
 </html>
