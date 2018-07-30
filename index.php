@@ -19,7 +19,7 @@
                         <li><a href="chapter3&4/addEmail.html">Add email's</a></li>
                         <li><a href="chapter3&4/listEmails.php">List email's</a></li>
                         <li><a href="chapter3&4/sendEmail.php">Send email's</a></li>
-                        <li><a href="chapter3&4/removeemail.html">Remove email from mailing list</a></li>
+                        <li><a href="chapter3&4/removeemail.php">Remove email from mailing list</a></li>
                     </ul>
                 </div>
             </div>

@@ -31,6 +31,7 @@
                     echo "Last name: $lastname<br/>";
                     echo "E-mail: $email";
                     ?>
+                    <br />
                     <button type="button" class="btn btn-primary" onclick="window.location.href = '../index.php'">Back</button>
                 </div>
             </div>
