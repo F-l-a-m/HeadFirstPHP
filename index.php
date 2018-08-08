@@ -14,12 +14,16 @@
                         <li><a href="chapter1&amp;2/report.html">Report an abduction</a></li>
                         <li><a href="chapter1&amp;2/viewReports.php">View reports</a></li>
                     </ul>
-                    <h2>Chapter 3</h2>
+                    <h2>Chapter 3 & 4</h2>
                     <ul>
                         <li><a href="chapter3&4/addEmail.html">Add email's</a></li>
                         <li><a href="chapter3&4/listEmails.php">List email's</a></li>
                         <li><a href="chapter3&4/sendEmail.php">Send email's</a></li>
                         <li><a href="chapter3&4/removeemail.php">Remove email from mailing list</a></li>
+                    </ul>
+                    <h2>Chapter 5</h2>
+                    <ul>
+                        <li><a href="chapter5/guitarwars.php">Guitar wars</a></li>
                     </ul>
                 </div>
             </div>
