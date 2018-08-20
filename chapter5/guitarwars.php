@@ -13,11 +13,18 @@ require_once '../template/templater.php';
                     <h2>Guitar Wars - High Scores</h2>
                     <p>Welcome, Guitar Warrior, do you have what it takes to crack the high score list? If so, just <a href="addscore.php">add your own score</a>.</p>
                     <hr />
+                    
                     <?php
                     // Connect to the database and retrieve the score data from MySQL
                     $pdo = Database::connect('headfirst');
-                    $sql = "SELECT * FROM guitarwars";
-                    // Loop through the array of score data, formatting it as HTML 
+                    
+                    // Select Top 1 score value
+                    $sql = "SELECT score FROM guitarwars ORDER BY score DESC LIMIT 1";
+                    $topScore = $pdo->query($sql)->fetchColumn();
+                    echo "<h1>Top score is: $topScore</h1>";
+                    
+                    // Select all data and order it
+                    $sql = "SELECT * FROM guitarwars ORDER BY score DESC, date ASC";
                     echo '<table>';
                     foreach ($pdo->query($sql) as $row) {
                         // Display the score data
@@ -37,5 +44,6 @@ require_once '../template/templater.php';
                 </div>
             </div>
         </div>
+        <?php Template::printFooter(); ?>
     </body> 
 </html>
