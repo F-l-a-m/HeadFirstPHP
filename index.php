@@ -24,6 +24,7 @@
                     <h2>Chapter 5</h2>
                     <ul>
                         <li><a href="chapter5/guitarwars.php">Guitar wars</a></li>
+                        <li><a href="chapter5/admin.php">Admin page</a></li>
                     </ul>
                 </div>
             </div>

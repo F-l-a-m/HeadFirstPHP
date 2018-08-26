@@ -19,8 +19,7 @@ require_once '../template/templater.php';
                     $pdo = Database::connect('headfirst');
                     
                     // Select Top 1 score value
-                    $sql = "SELECT score FROM guitarwars ORDER BY score DESC LIMIT 1";
-                    $topScore = $pdo->query($sql)->fetchColumn();
+                    $topScore = $pdo->query("SELECT score FROM guitarwars ORDER BY score DESC LIMIT 1")->fetchColumn();
                     echo "<h1>Top score is: $topScore</h1>";
                     
                     // Select all data and order it
